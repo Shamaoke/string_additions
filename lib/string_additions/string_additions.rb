@@ -2,7 +2,7 @@
 
 module StringAdditions
   def lcolstrip
-    gsub(/\A\n|\n\Z|^ {#{get_min_spaces}}/, '')
+    gsub(/\A\n|\n *\Z|^ {#{get_min_spaces}}/, '')
   end
 
   private
