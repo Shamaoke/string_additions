@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ['Shamaoke']
   s.email       = ['shamaoke@hotmail.com']
   s.homepage    = 'https://github.com/Shamaoke/string_additions'
-  s.summary     = %{ Extensions for the String class. }
-  s.description = %{ A collection of utility methods for the native String class. }
+  s.summary     = 'Extensions for the String class.'
+  s.description = 'A collection of utility methods for the native String class.'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files features/*.feature spec/string_additions/*_spec.rb`.split("\n")
