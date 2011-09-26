@@ -4,16 +4,25 @@ require 'spec_helper'
 
 describe String do
   describe '#lcolstrip' do
-    let(:raw_string) do
-      "\n      Эй, жлоб!\n    Где туз?\n        Прячь юных съемщиц в шкаф.\n"
-    end
-
-    let(:result) do
-      "  Эй, жлоб!\nГде туз?\n    Прячь юных съемщиц в шкаф."
-    end
-
     it 'strips the left column' do
-      raw_string.lcolstrip.should eq(result)
+      initial_string = "\n  one\n two\n"
+      result_string  = " one\ntwo"
+
+      initial_string.lcolstrip.should eq(result_string)
+    end
+
+    it 'strips the left column of a Unicode string' do
+      initial_string = "\n  один\n два\n"
+      result_string  = " один\nдва"
+
+      initial_string.lcolstrip.should eq(result_string)
+    end
+
+    it 'strips the left column of a string with blank lines' do
+      initial_string = "\n  один\n\n два\n"
+      result_string  = " один\n\nдва"
+
+      initial_string.lcolstrip.should eq(result_string)
     end
   end
 end
