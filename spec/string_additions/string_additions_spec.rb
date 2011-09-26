@@ -24,5 +24,12 @@ describe String do
 
       initial_string.lcolstrip.should eq(result_string)
     end
+
+    it 'strips the left column of a string with trailing spaces' do
+      initial_string = "\n  один\n два\n "
+      result_string  = " один\nдва"
+
+      initial_string.lcolstrip.should eq(result_string)
+    end
   end
 end
