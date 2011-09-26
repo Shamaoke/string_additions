@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = StringAdditions::VERSION
   s.authors     = ['Shamaoke']
   s.email       = ['shamaoke@hotmail.com']
-  s.homepage    = ['https://github.com/Shamaoke/string_additions']
+  s.homepage    = 'https://github.com/Shamaoke/string_additions'
   s.summary     = %{ Extensions for the String class. }
   s.description = %{ A collection of utility methods for the native String class. }
 
