@@ -19,3 +19,24 @@ Feature: Stripping the left column
       Где туз?
           Прячь юных съемщиц в шкаф.
       """
+
+  Scenario: Stripping the string with blank lines
+    Given I have the following string
+      """
+
+            Эй, жлоб!
+
+          Где туз?
+
+              Прячь юных съемщиц в шкаф.
+
+      """
+    When I strip the left column
+    Then I should have the following string
+      """
+        Эй, жлоб!
+
+      Где туз?
+
+          Прячь юных съемщиц в шкаф.
+      """
