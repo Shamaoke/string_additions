@@ -1,8 +1,8 @@
 # encoding: utf-8
 
 module StringAdditions
-  def lcolstrip
-    gsub(/\A *\n|\n *\z|^ {#{get_min_spaces}}/, '')
+  def lcolstrip(indent = 0)
+    gsub(/\A *\n|\n *\z|^ {#{get_min_spaces - indent}}/, '')
   end
 
   private

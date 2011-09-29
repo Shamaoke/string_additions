@@ -24,5 +24,12 @@ describe String do
 
       initial_string.lcolstrip.should eq(result_string)
     end
+
+    it 'strips the left column with the spacified indent size' do
+      initial_string = "      один\n    два"
+      result_string  = "    один\n  два"
+
+      initial_string.lcolstrip(2).should eq(result_string)
+    end
   end
 end
