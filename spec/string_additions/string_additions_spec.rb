@@ -4,28 +4,28 @@ require 'spec_helper'
 
 describe String do
   describe '#lcolstrip' do
-    it 'strips the left column' do
+    it 'removes all leading spaces in a line with a minimum quantity of them (n) and n spaces in other lines' do
       initial_string = "  один\n два"
       result_string  = " один\nдва"
 
       initial_string.lcolstrip.should eq(result_string)
     end
 
-    it 'strips the left column of a string with blank lines' do
+    it 'removes a leading and a trailing newline symbol in a whole string' do
       initial_string = "\n\n  один\n\n два\n\n"
       result_string  = "\n один\n\nдва\n"
 
       initial_string.lcolstrip.should eq(result_string)
     end
 
-    it 'strips the left column of a string with leading and trailing spaces' do
+    it 'removes any quantity of leading and trailing spaces in a whole string' do
       initial_string = "  \n  один\n два\n  "
       result_string  = " один\nдва"
 
       initial_string.lcolstrip.should eq(result_string)
     end
 
-    it 'strips the left column with the spacified indent size' do
+    it 'removes the specified quantity of leading spaces in all lines' do
       initial_string = "      один\n    два"
       result_string  = "    один\n  два"
 
