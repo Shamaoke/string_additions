@@ -1,5 +1,7 @@
+# encoding: utf-8
+
 Given /^I have the following string$/ do |string|
-  @raw_string = string
+  @raw_string = string.gsub('·', ' ')
 end
 
 When /^I strip the left column$/ do
@@ -11,5 +13,5 @@ When /^I strip the left column and specify an indent size as (\d+)$/ do |indent|
 end
 
 Then /^I should have the following string$/ do |string|
-  @result.should eq(string)
+  @result.should eq(string.gsub('·', ' '))
 end

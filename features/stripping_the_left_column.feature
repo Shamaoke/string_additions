@@ -6,16 +6,16 @@ Feature: Stripping the left column
   Scenario: Stripping the left column
     Given I have the following string
       """
-            Эй, жлоб!
-          Где туз?
-              Прячь юных съемщиц в шкаф.
+      ······Эй, жлоб!
+      ····Где туз?
+      ········Прячь юных съемщиц в шкаф.
       """
     When I strip the left column
     Then I should have the following string
       """
-        Эй, жлоб!
+      ··Эй, жлоб!
       Где туз?
-          Прячь юных съемщиц в шкаф.
+      ····Прячь юных съемщиц в шкаф.
       """
 
   Scenario: Stripping the left column of a string with blank lines
@@ -23,11 +23,11 @@ Feature: Stripping the left column
       """
 
 
-            Эй, жлоб!
+      ······Эй, жлоб!
 
-          Где туз?
+      ····Где туз?
 
-              Прячь юных съемщиц в шкаф.
+      ········Прячь юных съемщиц в шкаф.
 
 
       """
@@ -35,42 +35,42 @@ Feature: Stripping the left column
     Then I should have the following string
       """
 
-        Эй, жлоб!
+      ··Эй, жлоб!
 
       Где туз?
 
-          Прячь юных съемщиц в шкаф.
+      ····Прячь юных съемщиц в шкаф.
 
       """
 
   Scenario: Stripping the left column of a string with leading and trailing spaces
     Given I have the following string
       """
-          
-            Эй, жлоб!
-          Где туз?
-              Прячь юных съемщиц в шкаф.
-          
+      ····
+      ······Эй, жлоб!
+      ····Где туз?
+      ········Прячь юных съемщиц в шкаф.
+      ····
       """
     When I strip the left column
     Then I should have the following string
       """
-        Эй, жлоб!
+      ··Эй, жлоб!
       Где туз?
-          Прячь юных съемщиц в шкаф.
+      ····Прячь юных съемщиц в шкаф.
       """
 
   Scenario: Stripping the left column with the specified indent size
     Given I have the following string
       """
-            Эй, жлоб!
-          Где туз?
-              Прячь юных съемщиц в шкаф.
+      ······Эй, жлоб!
+      ····Где туз?
+      ········Прячь юных съемщиц в шкаф.
       """
     When I strip the left column and specify an indent size as 2
     Then I should have the following string
       """
-          Эй, жлоб!
-        Где туз?
-            Прячь юных съемщиц в шкаф.
+      ····Эй, жлоб!
+      ··Где туз?
+      ······Прячь юных съемщиц в шкаф.
       """
