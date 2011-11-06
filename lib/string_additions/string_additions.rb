@@ -7,6 +7,6 @@ module StringAdditions
 
   private
     def get_min_spaces
-      rstrip.scan(%r{^ +}).min.length
+      scan(/^( *)[[:alnum:]]+/).flatten.min.length
     end
 end

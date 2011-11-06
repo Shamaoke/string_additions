@@ -31,5 +31,12 @@ describe String do
 
       initial_string.lcolstrip(2).should eq(result_string)
     end
+
+    it 'doesn\'t make any changes in a string with a line with zero leading spaces' do
+      initial_string = "  один\nдва\n   три"
+      result_string  = "  один\nдва\n   три"
+
+      initial_string.lcolstrip.should eq(result_string)
+    end
   end
 end
