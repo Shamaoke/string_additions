@@ -104,3 +104,18 @@ Feature: Stripping the left column
       Где туз?
       ····Прячь юных съемщиц в шкаф.
       """
+
+  Scenario: Stripping the left column with the specified indent size when the last is equal the one in a line with the shortest indent
+    Given I have the following string
+      """
+      ····Эй, жлоб!
+      ··Где туз?
+      ······Прячь юных съемщиц в шкаф.
+      """
+    When I strip the left column and specify an indent size as 2
+    Then I should have the following string
+      """
+      ··Эй, жлоб!
+      Где туз?
+      ····Прячь юных съемщиц в шкаф.
+      """

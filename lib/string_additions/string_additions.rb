@@ -11,7 +11,7 @@ module StringAdditions
     end
 
     def set_spaces(indent_size)
-      get_min_spaces < indent_size ? get_min_spaces
-                                   : get_min_spaces - indent_size
+      get_min_spaces <= indent_size ? get_min_spaces
+                                    : get_min_spaces - indent_size
     end
 end

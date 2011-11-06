@@ -45,5 +45,12 @@ describe String do
 
       initial_string.lcolstrip(2).should eq(result_string)
     end
+
+    it 'removes all leading spaces in a line with a minimum quantity of them (n) and n spaces in other lines, if the specified quantity equals n' do
+      initial_string = "  один\n два"
+      result_string  = " один\nдва"
+
+      initial_string.lcolstrip(1).should eq(result_string)
+    end
   end
 end
