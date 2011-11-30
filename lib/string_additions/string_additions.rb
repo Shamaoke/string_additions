@@ -7,7 +7,7 @@ module StringAdditions
 
   private
     def get_min_spaces
-      scan(/^( *)[[:graph:]]/).flatten.min.length
+      scan(/^ *(?=\p{Alnum})/).min.length
     end
 
     def set_spaces(indent_size)
